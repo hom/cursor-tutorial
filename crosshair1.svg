@@ -1,0 +1,11 @@
+<svg width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+ <g stroke-width="1">
+  <line x1="0" y1="64" x2="60" y2="64" stroke="#00ff00" fill="none"/>
+  <line x1="68" y1="64" x2="128" y2="64" stroke="#00ff00" fill="none"/>
+  <line x1="64" y1="0" x2="64" y2="60" stroke="#00ff00" fill="none"/>
+  <line x1="64" y1="68" x2="64" y2="128" stroke="#00ff00" fill="none"/>
+ </g>
+ <g>
+    <polygon points="60,60 68,60 68,68 60,68" fill="none" stroke="#ffff00" stroke-width="1"/>
+ </g>
+</svg>
