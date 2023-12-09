@@ -13,7 +13,8 @@
         width: 100vw;
         height: 100vh;
         background-color: black;
-        cursor: url("crosshair.svg") 64 64, auto;
+        /* cursor: url("crosshair.svg") 64 64, auto; */
+        /* cursor: url("cursor.png") 64 64, auto; */
       }
       .container {
         width: 64px;
@@ -23,18 +24,52 @@
         top: 50%;
         left: 50%;
       }
-      .container:hover {
-        cursor: url("crosshair1.svg") 64 64, auto;
-      }
+      /* .container:hover {
+        cursor: url("cursor.png") 64 64, auto;
+      } */
     </style>
   </head>
   <body>
     <div class="container"></div>
-    <svg width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+    <!-- <svg width="128" height="128" xmlns="http://www.w3.org/2000/svg">
       <g>
-       <line x1="0" y1="64" x2="128" y2="64" stroke="#00ff00" fill="none"/>
-       <line x1="64" y1="0" x2="64" y2="128" stroke="#00ff00" fill="none"/>
+        <line x1="0" y1="64" x2="128" y2="64" stroke="#00ff00" fill="none" />
+        <line x1="64" y1="0" x2="64" y2="128" stroke="#00ff00" fill="none" />
       </g>
-     </svg>
+    </svg> -->
   </body>
 </html>
+
+<script>
+  // document.body.style.cursor = "url(crosshair.svg) 64 64, auto"
+  const svg = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "svg"
+  );
+  svg.setAttribute("width", "128");
+  svg.setAttribute("height", "128");
+  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  const line1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+  line1.setAttribute("x1", "0");
+  line1.setAttribute("y1", "64");
+  line1.setAttribute("x2", "128");
+  line1.setAttribute("y2", "64");
+  line1.setAttribute("stroke", "#00ff00");
+  line1.setAttribute("fill", "none");
+  const line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+  line2.setAttribute("x1", "64");
+  line2.setAttribute("y1", "0");
+  line2.setAttribute("x2", "64");
+  line2.setAttribute("y2", "128");
+  line2.setAttribute("stroke", "#00ff00");
+  line2.setAttribute("fill", "none");
+  g.appendChild(line1);
+  g.appendChild(line2);
+  svg.appendChild(g);
+  // document.body.appendChild(svg);
+  document.body.style.cursor = `url("data:image/svg+xml;base64,${btoa(
+    svg.outerHTML
+  )}") 64 64, auto`;
+
+</script>
